@@ -25,6 +25,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     int image = Random().nextInt(5) + 1;
+    void changeBoardResponse() {
+      setState(() {
+        image = Random().nextInt(5) + 1;
+      });
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -42,9 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: TextButton(
           onPressed: () {
-            setState(() {
-              image = Random().nextInt(5) + 1;
-            });
+            changeBoardResponse();
           },
           child: Image.asset("assets/images/ball$image.png"),
         ),
